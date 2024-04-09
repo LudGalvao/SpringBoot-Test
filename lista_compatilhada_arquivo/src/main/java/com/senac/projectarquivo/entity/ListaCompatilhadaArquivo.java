@@ -8,26 +8,26 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "lista_compatilhada_arquivo")
-public class ListaCompatilhadaArquivo{
+@Table(name = "lista_compartilhada_arquivo")
+public class ListaCompartilhadaArquivo{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "lista_compatilhada_arquivo_id", nullable = false)
-	private long lista_compatilhada_arquivo_id;
+	@Column(name = "lista_compartilhada_arquivo_id", nullable = false)
+	private long lista_compartilhada_arquivo_id;
 	
 	@Column(columnDefinition = "VARCHAR", name = "permissionamento_id", nullable = false) 
 	private String permissionamento_id;
 	
-	@Column(name = "lista_compatilhada_id", nullable = false)
-	private long lista_compatilhada_id;
+	@Column(name = "lista_compartilhada_id", nullable = false)
+	private long lista_compartilhada_id;
 
-	public long getLista_compatilhada_arquivo_id() {
-		return lista_compatilhada_arquivo_id;
+	public long getLista_compartilhada_arquivo_id() {
+		return lista_compartilhada_arquivo_id;
 	}
 
-	public void setLista_compatilhada_arquivo_id(long lista_compatilhada_arquivo_id) {
-		this.lista_compatilhada_arquivo_id = lista_compatilhada_arquivo_id;
+	public void setLista_compartilhada_arquivo_id(long lista_compartilhada_arquivo_id) {
+		this.lista_compartilhada_arquivo_id = lista_compartilhada_arquivo_id;
 	}
 
 	public String getPermissionamento_id() {
@@ -38,12 +38,12 @@ public class ListaCompatilhadaArquivo{
 		this.permissionamento_id = permissionamento_id;
 	}
 
-	public long getLista_compatilhada_id() {
-		return lista_compatilhada_id;
+	public long getLista_compartilhada_id() {
+		return lista_compartilhada_id;
 	}
 
-	public void setLista_compatilhada_id(long lista_compatilhada_id) {
-		this.lista_compatilhada_id = lista_compatilhada_id;
+	public void setLista_compartilhada_id(long lista_compartilhada_id) {
+		this.lista_compartilhada_id = lista_compartilhada_id;
 	}
 	
 	
