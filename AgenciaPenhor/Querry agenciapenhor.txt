@@ -1,0 +1,40 @@
+Eu estou fazendo um (Sistema de armazenamento digital de objetos em bancos - desejo ver que objetos foram penhorados e o valor da penhora por agencia)
+
+Essa é a Querry do sql. 
+CREATE TABLE Agencia (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255)
+);
+
+CREATE TABLE ObjetoPenhorado (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255)
+);
+
+CREATE TABLE Penhora (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    valor FLOAT(23),
+    agencia_id INT,
+    objeto_penhorado_id INT,
+    FOREIGN KEY (agencia_id) REFERENCES Agencia(id),
+    FOREIGN KEY (objeto_penhorado_id) REFERENCES ObjetoPenhorado(id)
+);
+
+
+INSERT INTO Agencia (nome) VALUES
+    ('Agência Central'),
+    ('Agência Sul'),
+    ('Agência Norte'),
+    ('Agência Oeste');
+
+INSERT INTO ObjetoPenhorado (descricao) VALUES
+    ('Relógio de Ouro'),
+    ('Colar de Diamantes'),
+    ('Bracelete de Prata'),
+    ('Anel de Esmeralda');
+
+INSERT INTO Penhora (valor, agencia_id, objeto_penhorado_id) VALUES
+    (500.00, 1, 1),
+    (1000.00, 2, 2),
+    (750.00, 3, 3),
+    (2000.00, 4, 4);
