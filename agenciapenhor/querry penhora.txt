@@ -1,0 +1,38 @@
+CREATE DATABASE agenciapenhor
+
+USE agenciapenhor;
+
+CREATE TABLE agencia (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255)
+);
+
+CREATE TABLE objetopenhorado (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(255)
+);
+CREATE TABLE penhora (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    valor FLOAT,
+    agencia_id INT(11),
+    objeto_penhorado_id INT(11),
+    FOREIGN KEY (agencia_id) REFERENCES agencia(id),
+    FOREIGN KEY (objeto_penhorado_id) REFERENCES objetopenhorado(id)
+);
+
+INSERT INTO agencia (nome) VALUES
+    ('Agência D'),
+    ('Agência E'),
+    ('Agência F');
+
+
+INSERT INTO objetopenhorado (descricao) VALUES
+    ('Camisas de Futebol'),
+    ('Videogame'),
+    ('Celulares');
+
+
+INSERT INTO penhora (valor, agencia_id, objeto_penhorado_id) VALUES
+    (700.00, 1, 1), 
+    (200.00, 2, 2), 
+    (5000.00, 3, 3);
